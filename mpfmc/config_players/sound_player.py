@@ -94,7 +94,7 @@ Here are several various examples:
 
         for sound_name, s in settings.items():
             if self.check_delayed_play(sound_name, s, context, calling_context, priority, **kwargs):
-                return
+                continue
 
             # adjust priority
             try:
@@ -108,7 +108,7 @@ Here are several various examples:
             except KeyError:
                 self.machine.log.error("SoundPlayer: The specified sound "
                                        "does not exist ('{}').".format(sound_name))
-                return
+                continue
 
             s.update(kwargs)
 
@@ -122,7 +122,7 @@ Here are several various examples:
                                        "does not exist. Unable to perform '{}' action "
                                        "on sound '{}'."
                                        .format(s['track'], action, sound_name))
-                return
+                continue
 
             # a block will block any other lower priority sound from being triggered by the same event
             # the calling_context contains the name of the triggering event

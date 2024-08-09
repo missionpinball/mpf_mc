@@ -77,7 +77,7 @@ jobs:
         with:
           python-version: ${{ matrix.python-version }}
       - name: Run cibuildwheel
-        uses: pypa/cibuildwheel@v2.16.1  # Oct 2, 2023
+        uses: pypa/cibuildwheel@v2.19.2  # Aug 9 2024
         env:
           CIBW_BEFORE_ALL_LINUX: > # This is done here and not as its own step as this runs inside the cibw containered environment
             yum install -y SDL2.x86_64 SDL2-devel.x86_64 SDL2_image.x86_64 SDL2_image-devel.x86_64

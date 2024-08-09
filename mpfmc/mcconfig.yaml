@@ -107,7 +107,7 @@ assets:
             load: mode_start
     images:
         default:
-            load: preload
+            load: on_demand
         preload:
             load: preload
         on_demand:
